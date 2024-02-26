@@ -1,0 +1,52 @@
+body {
+  background: linear-gradient(rgb(172, 60, 172), rgb(74, 62, 62));
+}
+
+#navBar {
+  box-shadow: 0 0 12px -2px white;
+  left: 0;
+  right: 0;
+  align-items: center;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5nKWd3PxmGKYSDZvRcQ-5n2LapW63a5wf7Q&usqp=CAU);
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 30px;
+  
+}
+
+/* Anime Page */
+.animeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: aliceblue;
+}
+
+.anime-card {
+  width: 400px;
+  margin: 1em;
+  align-items: start;
+  border: solid;
+}
+
+.anime-card image {
+  float:left;
+	width:152px;
+	height:214px;
+	position:relative;
+}
+
+/* Account Page */
+.pageLikes {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em;
+  justify-content: space-around;
+  color: aliceblue;
+}
+
+.pagePost {
+  color: aliceblue;
+}
