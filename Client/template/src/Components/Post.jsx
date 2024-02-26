@@ -26,20 +26,21 @@ export default function Posts({user}) {
         return data
     }
 
-    async function updatePost() {
-        try {
-            const response = { title, description }
-            const data = await postUpdate(response, { id })
-            const results = await fetchPosts(id)
-            setAllPosts(results)
-            return data
-        } catch (error) {
-            console.error(error);
+        async function editPost() {
+            try {
+                const response = { post: {title, description} }
+                const data = await postUpdate(response, { id })
+                const results = await fetchPosts(id)
+                setAllPosts(results)
+                return data
+            } catch (error) {
+                console.error(error);
+            }
         }
-    }
-    async function postDelete({ id }) {
+    
+    async function postDelete({ postid }) {
         try {
-            await deletePost({ id })
+            await deletePost({ postid })
         } catch (error) {
             console.error(error);
         }
@@ -51,6 +52,8 @@ export default function Posts({user}) {
         createPost();
         setTitle('');
         setDescription('');
+        editPost('');
+        postDelete()
     }
 
     return (
@@ -87,7 +90,7 @@ export default function Posts({user}) {
                             <div>
                                 <h2>{post.title}</h2>
                                 <p>{post.description}</p>
-                                
+                                <button onClick={() => deletePost(id)}>Delete Post</button>
                             </div>
                         </>
                     )

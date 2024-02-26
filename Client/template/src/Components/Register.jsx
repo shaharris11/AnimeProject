@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GiHeartBeats } from "react-icons/gi";
-import Login from "./Login";
+
 
 
 export default function Register({ setToken }) {
@@ -76,7 +76,6 @@ export default function Register({ setToken }) {
           </label>
           <input className="register-submit" type="submit" />
         </form>
-        <Login />
       </div>
     );
   }

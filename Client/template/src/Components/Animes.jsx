@@ -9,19 +9,28 @@ export default function Animes({user}) {
     const navigate = useNavigate();
 
     useEffect(() => {
-         getAnimes()
-    }, [])
+         getAnimes();
+         getLikedAnime();
+    }, [user])
     async function getAnimes() {
         try {
             const res = await fetch(`http://localhost:8080/api/anime`);
-            const res2 = await fetch(`http://localhost:8080/api/likes/mine/${user.id}`);
             const data = await res.json();
-            const data2 = await res2.json();
-            setMyLikes(data2)
             setAnimes(data)
         } catch (error) {
             console.error(error);
         }
+    }
+    async function getLikedAnime() {
+        try {
+            const res2 = await fetch(
+              `http://localhost:8080/api/likes/mine/${user.id}`
+            );
+            const data2 = await res2.json();
+            setMyLikes(data2);
+          } catch (error) {
+            console.error(error);
+          }
     }
     console.log(user);
     async function like(animeid, user) {
@@ -36,7 +45,8 @@ export default function Animes({user}) {
                   userid: user.id
                 }),
               });
-            getAnimes()
+            getLikedAnime();
+            getAnimes();
         } catch (error) {
             console.error(error);
         }
@@ -53,7 +63,8 @@ export default function Animes({user}) {
                   userid: user.id
                 }),
               });
-            getAnimes()
+            getAnimes();
+            getLikedAnime();
         } catch (error) {
             console.error(error);
         }
