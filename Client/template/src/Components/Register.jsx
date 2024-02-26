@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GiHeartBeats } from "react-icons/gi";
+import Login from "./Login";
 
 
 export default function Register({ setToken }) {
@@ -36,6 +38,8 @@ export default function Register({ setToken }) {
     }
     return (
       <div className="register-container">
+        <h2>Welcome to Anime Pulse <GiHeartBeats size='25px' /></h2>
+        <p>Get ready for a new world of Anime! Where you can watch your favorite anime and talk about it with each Pulse at a same time. Get connected today!! </p>
         <h2>Register form:</h2>
         <form className="register-form" onSubmit={handleSubmit}>
           <label>
@@ -72,6 +76,7 @@ export default function Register({ setToken }) {
           </label>
           <input className="register-submit" type="submit" />
         </form>
+        <Login />
       </div>
     );
   }

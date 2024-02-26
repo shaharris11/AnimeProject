@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(rgb(172, 60, 172), rgb(74, 62, 62));
+  background: linear-gradient(rgb(116, 116, 240), rgb(74, 62, 62));
 }
 
 #navBar {
@@ -13,6 +13,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   font-size: 30px;
+  color: aliceblue;
   
 }
 
@@ -49,4 +50,16 @@ body {
 
 .pagePost {
   color: aliceblue;
+}
+
+/* Register Form */
+.register-container {
+  background-color: #91A8D0;
+  border: 3px dotted #b4c8ea;
+  color: lavenderblush;
+  text-align: center;
+  height: 750px;
+}
+.register-form {
+  font-size: larger;
 }

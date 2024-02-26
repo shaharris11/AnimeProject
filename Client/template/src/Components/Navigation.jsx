@@ -11,7 +11,7 @@ export default function Navigation({user, setUser}) {
     return (
         <>
         <nav id="navBar">
-            <Link to='/'>Home</Link>
+            <Link to='/'>AnimeList</Link>
             <Link to='/account'>Account</Link>
             {!user?.token && <Link to='/register'>Register</Link>}
             {!user?.token && <Link to='/login'>Login</Link>}
