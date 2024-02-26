@@ -44,23 +44,18 @@ const createPost = async (body) => {
   }
 }
 
-async function updatePost(userid, fields) {
+const updatePost = async (id, fields = {}) => {
+  const setString = Object.keys(fields).map((key, index) => `"${key}"=$${index + 1}`).join(', ');
+  if (setString.length === 0) {
+      return;
+  }
   try {
-      const toUpdate = {}
-      for (let column in fields) {
-          if (fields[column] !== undefined) toUpdate[column] = fields[column];
-      }
-      let post;
-
-      if (util.dbFields(toUpdate).insert.length > 0) {
-          const { rows } = await client.query(`
+      const { rows: [post] } = await client.query(`
           UPDATE posts
-          SET ${util.dbFields(toUpdate).insert}
-          WHERE userid=${userid}
+          SET ${setString}
+          WHERE postid=${id}
           RETURNING *;
-        `, Object.values(toUpdate));
-          post = rows[0];
-      }
+      `, Object.values(fields));
       return post;
   } catch (error) {
       throw error;
