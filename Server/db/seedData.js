@@ -24,7 +24,7 @@ async function createTables() {
         creator VARCHAR(255) NOT NULL,
         description TEXT NOT NULL,
         image VARCHAR(255) NOT NULL,
-        link VARCHAR(255) NOT NULL
+        link TEXT NOT NULL
         );
       CREATE TABLE users (
         id SERIAL PRIMARY KEY,
