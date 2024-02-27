@@ -44,31 +44,38 @@ const createPost = async (body) => {
   }
 }
 
-const updatePost = async (id, fields = {}) => {
-  const setString = Object.keys(fields).map((key, index) => `"${key}"=$${index + 1}`).join(', ');
-  if (setString.length === 0) {
-      return;
-  }
+const updatePost = async (id, fields) => {
   try {
-      const { rows: [post] } = await client.query(`
-          UPDATE posts
-          SET ${setString}
-          WHERE postid=${id}
-          RETURNING *;
-      `, Object.values(fields));
-      return post;
+    const toUpdate = {}
+    for (let column in fields) {
+      if (fields[column] !== undefined) toUpdate[column] = fields[column];
+    }
+    let post = {};
+
+    if (util.dbFields(toUpdate).insert.length > 0) {
+      const { rows } = await client.query(`
+        UPDATE posts
+        SET ${util.dbFields(toUpdate).insert}
+        WHERE id=${id}
+        RETURNING *;
+      `, Object.values(toUpdate));
+
+      post = rows[0];
+    }
+
+    return post;
   } catch (error) {
-      throw error;
+    throw error
   }
 }
 
-async function deletePost(postid) {
+async function deletePost(id) {
   try {
       const { rows: [rows] } = await client.query(`
           DELETE FROM posts
-          WHERE "postid" =$1
+          WHERE id = ${id}
           RETURNING *;
-      `, [postid]);
+      `, [id]);
       return rows[0];
   } catch (error) {
       throw error;
