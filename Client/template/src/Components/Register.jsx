@@ -77,7 +77,10 @@ export default function Register({ setToken }) {
           <input className="register-submit" type="submit" />
         </form>
         <br />
-        <img src="https://i.ebayimg.com/images/g/aTEAAOSwlEtfbdOX/s-l400.jpg" alt="animeposter"/>
+        <iframe width="700" height="400"
+          src="https://www.youtube.com/embed/fQ6PRbh-ntM?si=hi9CsY2e0IC8C1H0">
+        </iframe>
+        {/* <img src="https://i.ebayimg.com/images/g/aTEAAOSwlEtfbdOX/s-l400.jpg" alt="animeposter"/> */}
       </div>
     );
   }

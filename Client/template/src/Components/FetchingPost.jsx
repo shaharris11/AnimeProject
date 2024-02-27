@@ -35,6 +35,10 @@ export const postUpdate = async (postid, post) => {
     try {
         const res = await fetch(`http://localhost:8080/api/post/${postid}`, {
             method: 'PUT',
+            // headers: {
+            //     "content-type": "application/json",
+            //     authorization: `Bearer ${data.token}`,
+            // },
             body: JSON.stringify(post)
         })
         const data = await res.json()

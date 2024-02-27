@@ -64,10 +64,13 @@ body {
 /* Register Form */
 .register-container {
   background-color: #91A8D0;
-  border: 3px dotted #b4c8ea;
   color: lavenderblush;
   text-align: center;
-  height: 750px;
+  height: 700px;
+  font-size: larger;
+}
+.register-container p{
+  font-size: x-large;
 }
 .register-container img {
   width: 100%;
@@ -79,8 +82,16 @@ body {
 /* Login Page */
 .login-form {
   background-color: #91A8D0;
-  border: 3px dotted #b4c8ea;
   color: lavenderblush;
   text-align: center;
-  height: 200px;
+  
+}
+.login-container{
+  color: lavenderblush;
+  font-size: xx-large;
+  height: 700px;
+}
+.login-container img {
+  height: 700px;
+ 
 }
