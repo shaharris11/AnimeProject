@@ -76,6 +76,8 @@ export default function Register({ setToken }) {
           </label>
           <input className="register-submit" type="submit" />
         </form>
+        <br />
+        <img src="https://i.ebayimg.com/images/g/aTEAAOSwlEtfbdOX/s-l400.jpg" alt="animeposter"/>
       </div>
     );
   }

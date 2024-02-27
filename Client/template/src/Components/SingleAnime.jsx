@@ -26,15 +26,15 @@ export default function SingleAnime({user}) {
     return (
         <>
         <div className='singleAnime'>
-            <img src={anime.image} alt={anime.name}/> 
             <h1>{anime.name}</h1>
-            <h1>{anime.creator}</h1>
+            {/* <br />  */}
+            <img src={anime.image} alt={anime.name}/> 
+            <h1>Creator: {anime.creator}</h1>
             <p>{anime.link}</p>
             <p>{anime.description}</p>
             
             <br />
             {<Posts user={user}/>}
-
         </div>
         </>
     )

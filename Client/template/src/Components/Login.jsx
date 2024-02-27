@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GiHeartBeats } from "react-icons/gi";
 
 
 export default function Login({setUser}) {
@@ -34,7 +35,8 @@ export default function Login({setUser}) {
     }
     return (
       <div className="login-container">
-        <h2>Login form:</h2>
+        <h2>Welcome to Anime AnimePulse <GiHeartBeats size='25px' /></h2>
+        <p>Login to Your Profile!</p>
         <form className="login-form" onSubmit={handleSubmit}>
           <label>
             Username:

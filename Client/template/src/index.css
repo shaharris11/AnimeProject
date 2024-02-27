@@ -26,17 +26,26 @@ body {
 }
 
 .anime-card {
-  width: 400px;
+  width: 300px;
   margin: 1em;
   align-items: start;
-  border: solid;
 }
 
 .anime-card image {
   float:left;
 	width:152px;
-	height:214px;
+	height: 215px;
 	position:relative;
+}
+
+/* Single Anime Page */
+.singleAnime {
+  color: aliceblue;
+  font-size: 30px;
+}
+.singleAnime image {
+  width: 300px;
+  height: 300px;
 }
 
 /* Account Page */
@@ -60,6 +69,18 @@ body {
   text-align: center;
   height: 750px;
 }
+.register-container img {
+  width: 100%;
+}
 .register-form {
   font-size: larger;
+}
+
+/* Login Page */
+.login-form {
+  background-color: #91A8D0;
+  border: 3px dotted #b4c8ea;
+  color: lavenderblush;
+  text-align: center;
+  height: 200px;
 }
