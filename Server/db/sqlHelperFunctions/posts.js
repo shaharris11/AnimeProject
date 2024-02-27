@@ -69,6 +69,25 @@ const updatePost = async (id, fields) => {
   }
 }
 
+// async function updatePost(token, body) {
+//   try {
+//     const {
+//       rows: [post],
+//     } = await client.query('SELECT * FROM posts WHERE token = $1', [token]);
+
+//     if (post.id !== body.id) {
+//       throw new Error('Invalid post');
+//     }
+
+//     const {
+//       rows: [updatedPost],
+//     } = await client.query('UPDATE posts SET description = $1 WHERE id = $2 RETURNING *', [body.username, body.id]);
+//     return updatedPost;
+//   } catch (error) {
+//     throw new Error('Unable to update username');
+//   }
+// }
+
 async function deletePost(id) {
   try {
       const { rows: [rows] } = await client.query(`
