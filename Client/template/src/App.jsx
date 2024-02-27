@@ -9,6 +9,7 @@ import Register from './Components/Register'
 import Navigation from './Components/Navigation'
 import Login from './Components/Login'
 import Account from './Components/Account'
+import Posts from './Components/Post'
 
 function App() {
   const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")));
@@ -24,6 +25,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login setUser={setUser} />} /> 
         <Route path='/account' element={<Account user={user}/>} />
+        <Route path='/post' element={<Posts user={user}/>}/>
       </Routes>
     </>
   )

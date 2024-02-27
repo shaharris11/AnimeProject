@@ -28,7 +28,7 @@ export default function Posts({user}) {
 
         async function editPost() {
             try {
-                const response = { post: {title, description} }
+                const response = { post: { description} }
                 const data = await postUpdate(response, { id })
                 const results = await fetchPosts(id)
                 setAllPosts(results)
@@ -90,7 +90,8 @@ export default function Posts({user}) {
                             <div>
                                 <h2>{post.title}</h2>
                                 <p>{post.description}</p>
-                                <button onClick={() => deletePost(id)}>Delete Post</button>
+                                <button onClick={() => editPost(post)}>Edit</button>
+                                <button onClick={() => deletePost(post)}>Delete Post</button>
                             </div>
                         </>
                     )
