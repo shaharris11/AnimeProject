@@ -1,6 +1,6 @@
 export const fetchPosts = async (animeid) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/posts/${animeid}`)
+        const response = await fetch(`https://animeproject-yjv4.onrender.com/api/posts/${animeid}`)
         const data = await response.json()
         console.log(data);
         return data
@@ -11,7 +11,7 @@ export const fetchPosts = async (animeid) => {
 
 export const makePosts = async (post) => {
     try {
-        const response = await fetch(`http://localhost:8080/api/posts/`, {
+        const response = await fetch(`https://animeproject-yjv4.onrender.com/api/posts/`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export const makePosts = async (post) => {
 
 export const postUpdate = async (postid, post) => {
     try {
-        const res = await fetch(`http://localhost:8080/api/post/${postid}`, {
+        const res = await fetch(`https://animeproject-yjv4.onrender.com/api/post/${postid}`, {
             method: 'PUT',
             // headers: {
             //     "content-type": "application/json",
@@ -50,7 +50,7 @@ export const postUpdate = async (postid, post) => {
 
 export const deletePost =async (postid) => {
     try {
-        const res = await fetch(`http://localhost:8080/api/posts/${postid}`, {
+        const res = await fetch(`https://animeproject-yjv4.onrender.com/api/posts/${postid}`, {
             method: "DELETE",
         })
         const data = await res.json()

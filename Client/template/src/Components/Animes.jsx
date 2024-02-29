@@ -14,7 +14,7 @@ export default function Animes({user}) {
     }, [user])
     async function getAnimes() {
         try {
-            const res = await fetch(`http://localhost:8080/api/anime`);
+            const res = await fetch(`https://animeproject-yjv4.onrender.com/api/anime`);
             const data = await res.json();
             setAnimes(data)
         } catch (error) {
@@ -32,9 +32,9 @@ export default function Animes({user}) {
             console.error(error);
           }
     }
-    console.log(user);
+    
     async function like(animeid, user) {
-        console.log(user);
+        
         try {
             const res = await fetch(`http://localhost:8080/api/likes/${animeid}/like`, {
                 method: "POST",
@@ -52,7 +52,7 @@ export default function Animes({user}) {
         }
     }
     async function unlike(animeid, user) {
-        console.log(user);
+        
         try {
             const res = await fetch(`http://localhost:8080/api/likes/${animeid}/unlike`, {
                 method: "DELETE",

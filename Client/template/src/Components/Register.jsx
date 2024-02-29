@@ -16,7 +16,7 @@ export default function Register({ setToken }) {
       e.preventDefault();
       try {
         const response = await fetch(
-          `http://localhost:8080/api/auth/register`,
+          `https://animeproject-yjv4.onrender.com/api/auth/register`,
           {
             method: "POST",
             headers: {

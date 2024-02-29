@@ -1,5 +1,3 @@
-
-ACCOUNT.jsx
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 export default function Account({user}) {
@@ -10,8 +8,8 @@ export default function Account({user}) {
     useEffect(() => {
         async function fetchAccount() {
             try{
-                const response = await fetch(`http://localhost:8080/api/posts/mine/${user?.id}`)
-                const res = await fetch(`http://localhost:8080/api/likes/mine/${user?.id}`);
+                const response = await fetch(`https://animeproject-yjv4.onrender.com/api/posts/mine/${user?.id}`)
+                const res = await fetch(`https://animeproject-yjv4.onrender.com/api/likes/mine/${user?.id}`);
                 const data = await response.json()
                 const data2 = await res.json()
                 setMyPost(data)

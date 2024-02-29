@@ -4,7 +4,7 @@ import Posts from './Post';
 
 
 
-const apiUrl = "http://localhost:8080/api"
+const apiUrl = "https://animeproject-yjv4.onrender.com/api"
 
 export default function SingleAnime({user}) {
     const [anime, setAnime] = useState({})
