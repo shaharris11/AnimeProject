@@ -1,7 +1,7 @@
+
+ACCOUNT.jsx
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
-
 export default function Account({user}) {
     // const [userAccount, setUserAccount] = useState({});
     const [myLikes, setMyLikes] = useState([]);
@@ -25,31 +25,33 @@ export default function Account({user}) {
     return(
         <>
             <div className="account">
-              <p>Welcome!{user?.username} </p>
-             
+              <h1>Welcome, {user?.username}!</h1>
+             </div><div><h1>My Animes</h1></div>
+             <div className="account-containers">
             <div className="pageLikes">
                 {myLikes && myLikes?.length > 0 && myLikes.map((anime) => {
                     
                     return (
-                        <>
+                        <>  
                             <div>
                                 <h2>{anime.name}</h2>
-                                <img src={anime.image} alt={anime.name} />
+                                <img src={anime.image} alt={anime.name} /><br />
                                 <button onClick={() => { navigate(`/anime/${anime.id}`) }}>See Details</button>
-                                <Link to= '/anime/:id'>Details</Link>
-
                             </div>
                         </>
                     )
                 })}
             </div>
             <div className="pagePost">
+                 <h1>My Pulses</h1><br/>
                 {myPosts && myPosts?.length > 0 && myPosts.map((post) => {
                     console.log(post)
                     return (
                         <>
                             <div>
-                                <h2>{post.title}: {post.description}</h2>
+                               
+                                <h3>{post.title}:</h3> 
+                                <p>{post.description}</p>
                                
                             </div>
                         </>
