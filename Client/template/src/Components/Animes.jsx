@@ -24,7 +24,7 @@ export default function Animes({user}) {
     async function getLikedAnime() {
         try {
             const res2 = await fetch(
-              `http://localhost:8080/api/likes/mine/${user.id}`
+              `https://animeproject-yjv4.onrender.com//api/likes/mine/${user.id}`
             );
             const data2 = await res2.json();
             setMyLikes(data2);
@@ -36,7 +36,7 @@ export default function Animes({user}) {
     async function like(animeid, user) {
         
         try {
-            const res = await fetch(`http://localhost:8080/api/likes/${animeid}/like`, {
+            const res = await fetch(`https://animeproject-yjv4.onrender.com//api/likes/${animeid}/like`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
